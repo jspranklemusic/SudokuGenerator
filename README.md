@@ -16,5 +16,5 @@ If the number is correct, the input will be written on the grid. If not, the gri
 
 ### Notes Mode
 
-To make a note, press the 'n' key to activeate notes mode, or select the pen button. Any clicks on the grid will now create a new note. If the note is illegal, the note will not write, but no mistakes will be made. Each new valid note input will erase any existing notes which are now impossible.
+To make a note, press the 'n' key on your keyboard to activate notes mode, or select the pen button. Any clicks on the grid will now create a new note. If the note is illegal, the note will not write, but no mistakes will be made. Each new valid note input will erase any newly-invalid existing notes.
 
