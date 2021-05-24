@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku</title>
+</head>
+<body>
+    <div style="position:absolute;width:100%;height:100%;z-index:10" class="modal-test transform-down"></div>
+    <script src="modal.js"></script>
+    <div data-current-value="1" id="scene">
+
+    </div>
+    <div class="sidebar">
+        <div>
+            <h1>Sudoku</h1>
+            <div class="radio-buttons">
+                <div class="form-control">
+                    <input value="filled" type="radio" name="difficulty" id="difficulty-filled">
+                    <label for="difficulty-filled">Pre-filled</label>    
+                </div>
+                <div class="form-control">
+                    <input checked="true" value="easy" type="radio" name="difficulty" id="difficulty-easy">
+                    <label for="difficulty-easy">Easy</label>    
+                </div>
+                <div class="form-control">
+                    <input value="medium" type="radio" name="difficulty" id="difficulty-medium">
+                    <label for="difficulty-medium">Medium</label>
+                    
+                </div>
+                <div class="form-control">
+                    <input value="hard" type="radio" name="difficulty" id="difficulty-hard">
+                    <label for="difficulty-hard">Hard</label>
+                    
+                </div>
+                <div class="form-control">
+                    <input value="expert" type="radio" name="difficulty" id="difficulty-expert">
+                    <label for="difficulty-expert">Expert</label>
+                </div>
+            </div>
+         
+        </div>
+       
+        
+
+
+        <div>
+            <div style="display: flex; align-items: center; justify-content: center;">
+                <button id="generate-map">Generate</button>
+                <button id="solve-map">Solve</button>
+            </div>
+            
+            <div id="number-buttons">
+                <div data-value="1" class="btn number-btn btn-selected">1</div>
+                <div data-value="2"  class="btn number-btn">2</div>
+                <div data-value="3"  class="btn number-btn">3</div>
+                <div data-value="4"  class="btn number-btn">4</div>
+                <div data-value="5"  class="btn number-btn">5</div>
+                <div data-value="6"  class="btn number-btn">6</div>
+                <div data-value="7"  class="btn number-btn">7</div>
+                <div data-value="8"  class="btn number-btn">8</div>
+                <div data-value="9"  class="btn number-btn">9</div>
+                <div data-notes_enabled="true" id="notes-btn" class="btn">
+                    <img style="width:1rem;height:1rem" src="/assets/pen.svg" alt="">
+                </div>
+            </div>
+   
+        </div>
+    
+
+    </div>
+</body>
+</html>

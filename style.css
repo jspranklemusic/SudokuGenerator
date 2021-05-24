@@ -1,0 +1,247 @@
+html,body{
+    width:100vw;
+    height:100%;
+    background:linear-gradient(rgb(28, 59, 26),rgb(7, 37, 11));
+    padding:0;
+    margin:0;
+    font-family:sans-serif;
+    overflow:hidden;
+    display:grid;
+    align-items:center;
+    grid-template-columns: 5fr 1fr;
+    position:relative;
+}
+
+a{
+    font-size:0.8rem;
+    text-align: center;
+    display: block;
+    padding:0.25rem;
+}
+
+#scene{
+    background:rgb(205, 255, 190);
+    display:grid;
+    grid-template-rows: repeat(9, 1fr);
+    grid-template-columns: repeat(9, 1fr);
+    box-sizing: border-box;
+    border:7px solid rgb(26, 131, 16);
+    max-width:680px;
+    max-height:680px;
+    margin:0 auto;
+    border-radius:5px;
+    cursor: pointer;
+}
+
+#scene >*{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    font-size:min(40px, 7vw);
+    color:rgb(36, 87, 20);
+
+    user-select: none;
+    font-weight:bold;
+    position: relative;
+}
+
+.modal-test{
+    transition:0.5s;
+}
+
+.modal{
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height:100%;
+    background:linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.8))
+}
+
+.cursor-pen{
+    cursor: url('/assets/pen.png'),pointer !important;
+}
+
+.transform-down{
+    transform:translateY(100%);
+    opacity:0;
+}
+
+
+
+[data-quadrant-filled="true"]::after{
+    content:"";
+    width:100%;
+    height:100%;
+    position: absolute;
+    left:0;
+    top:0;
+    border:1px solid transparent;
+    background:rgba(0, 128, 0, 0.2);
+    animation:fadein 0.3s backwards;
+}
+[data-row-filled="true"]::after{
+    content:"";
+    width:100%;
+    height:100%;
+    position: absolute;
+    left:0;
+    top:0;
+    border:1px solid transparent;
+    background:rgba(0, 128, 0, 0.2);
+    animation:fadein 0.3s backwards;
+}
+[data-column-filled="true"]::after{
+    content:"";
+    width:100%;
+    height:100%;
+    position: absolute;
+    left:0;
+    top:0;
+    border:1px solid transparent;
+    background:rgba(0, 128, 0, 0.2);
+    animation:fadein 0.3s backwards;
+}
+
+
+.form-control{
+    display:flex;
+    justify-content: flex-start;
+    align-items:center;
+}
+.form-control >input{
+    margin-right:1rem;
+    margin-bottom:0.5rem;
+}
+
+h1{
+    text-align:center;
+    font-size:1.25rem;
+    padding:0;
+    margin:0;
+}
+label{
+    font-size:16px;
+}
+
+.radio-buttons{
+    padding:1rem;
+    width:max-content;
+    box-sizing: border-box;
+}
+
+button{
+    display:block;
+    margin:0.5rem;
+    background:white;
+    border-radius:5px;
+    padding:0.4rem;
+    background:rgb(255, 255, 255);
+    border:2px solid rgb(199, 199, 199);
+    font-size:0.8rem;
+    cursor: pointer;
+
+}
+
+
+label{
+    cursor:pointer;
+}
+
+
+.sidebar{
+    background:white;
+    height:100%;
+    box-sizing:border-box;
+    padding:1rem;
+    width:100%;
+}
+
+#number-buttons{
+    font-size:1.25rem;
+    display:flex;
+    flex-direction:row;
+    width:100%;
+    flex-wrap:wrap;
+    text-align:center;
+    justify-content: center;
+
+}
+
+.btn{
+    border:2px solid rgb(206, 206, 206);
+    height:1.75rem;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    flex-basis:1.75rem;
+    margin:0.25rem;
+    border-radius:7px;
+    transition:0.15s;
+    user-select: none;
+    cursor: pointer;
+
+}
+
+.fas{
+    font-size:1rem;
+}
+.btn:hover{
+    background:rgb(197, 219, 197);
+    border:2px solid rgb(159, 173, 153);
+}
+.btn:active{
+    background:rgb(197, 219, 197);
+    border:2px solid rgb(159, 173, 153);
+    opacity:0.8;
+}
+.btn-selected{
+    background:rgb(159, 214, 159);
+    border:2px solid rgb(68, 110, 51);
+}
+
+
+
+[filled="false"]:hover::after{
+    content:var(--current-value);
+    position:absolute;
+    color:rgba(114, 114, 114, 0.514);
+}
+[error="true"]{
+    content:"";
+    width:100%;
+    height:100%;
+    position: absolute;
+    left:0;
+    top:0;
+    color:rgb(216, 48, 48) !important;
+    border:1px solid transparent;
+    background:rgba(255, 0, 0, 0.2);
+}
+
+@media only screen and (max-width:710px){
+    html,body{
+        grid-template-columns: 100%;
+        
+    
+    }
+    .sidebar{
+        display: flex;
+    }
+    #number-buttons{
+        height: max-content;
+    }
+    h1{
+        font-size:1rem;
+    }
+}
+
+
+@keyframes fadein{
+    0%{
+        opacity:0;
+    }
+    100%{
+        opacity:1;
+    }
+}
