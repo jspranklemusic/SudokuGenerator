@@ -1,5 +1,5 @@
 # SudokuGenerator
-A sudoku solver, generation algorithm, and interactive game made with vanilla Javascript, CSS, and HTML. 
+A sudoku solver, generation algorithm, and interactive game made with vanilla Javascript, CSS, and HTML. A working version is available here: https://happy-meitner-914d9b.netlify.app/
 
 ## The Algorithm
 The algorithm works with a combined brute-force and randomness approach. Whereas a traditional brute-force approach would involve starting at 1, checking for errors, and incrementing the value until no errors occur, this approach involves randomizing the input for a more balanced approach. Eventually, it is possible to run into an unavoidable conflict. In this case, a stack storing an array of "attempted" values is implemented. When an unavoidable conflict occurs, the most recent attempt is popped, and new values are tried in the previous location of the stack. 
