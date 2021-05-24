@@ -6,7 +6,7 @@ The algorithm works with a combined brute-force and randomness approach. Whereas
 
 The sudoku map itself is stored in a simple, 1-dimensional array. To determine which indices are related to the current index, (i.e., rows, columns quadrants), mathematical relations are used for instant access time. 
 
-For instance, `const p = i - ((i%9)%3) - (i - (i%9))%27;` determines p as the starting index of the quadrant, where `const pInds = [p,p+1,p+2,p+9,p+10,p+11,p+18,p+19,p+20];` would determine the values of the indices in the quadrant. 
+For instance, `const p = i - ((i%9)%3) - (i - (i%9))%27;` determines p as the starting index of the quadrant, and `const pInds = [p,p+1,p+2,p+9,p+10,p+11,p+18,p+19,p+20];` would determine the values of the indices in the quadrant of the starting index. 
 
 ## Using the Game
 
@@ -16,6 +16,5 @@ If the number is correct, the input will be written on the grid. If not, the gri
 
 ### Notes Mode
 
-This game works especially well on dekstop. Each of the numbers are controlled with the number keys, where selecting a key will result in the number being selected. 
-To try a number, select a number from the buttons, and click a location on the map. To make a note, press the 'n' key
+To make a note, press the 'n' key to activeate notes mode, or select the pen button. Any clicks on the grid will now create a new note. If the note is illegal, the note will not write, but no mistakes will be made. Each new valid note input will erase any existing notes which are now impossible.
 
