@@ -232,7 +232,7 @@ label{
 
 @media only screen and (max-width:710px){
     html,body{
-        grid-template-columns: 100%;
+        grid-template-columns: 100%
         
     
     }
