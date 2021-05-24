@@ -2,11 +2,11 @@
 A sudoku solver, generation algorithm, and interactive game made with vanilla Javascript, CSS, and HTML. 
 
 ## The Algorithm
-The algorithm works with a combined brute-force and randomness approach. Whereas a traditional brute-force approach would involve starting at 1, checking for errors, and incrementing the value until no errors occur. Eventually, it is possible to run into an unavoidable conflict. In this case, a stack storing an array of "attempted" values is implemented. When an unavoidable conflict occurs, the most recent attempt is popped, and new values are tried in the previous location of the stack. 
+The algorithm works with a combined brute-force and randomness approach. Whereas a traditional brute-force approach would involve starting at 1, checking for errors, and incrementing the value until no errors occur, this approach involves randomizing the input for a more balanced approach. Eventually, it is possible to run into an unavoidable conflict. In this case, a stack storing an array of "attempted" values is implemented. When an unavoidable conflict occurs, the most recent attempt is popped, and new values are tried in the previous location of the stack. 
 
 The sudoku map itself is stored in a simple, 1-dimensional array. To determine which indices are related to the current index, (i.e., rows, columns quadrants), mathematical relations are used for instant access time. 
 
-For instance, `const p = i - ((i%9)%3) - (i - (i%9))%27;` determines p as the starting index of the quadrant, and `const pInds = [p,p+1,p+2,p+9,p+10,p+11,p+18,p+19,p+20];` would determine the values of the indices in the quadrant of the starting index. 
+For instance, `const p = i - ((i%9)%3) - (i - (i%9))%27;` determines p as the starting index of the respective quadrant, and `const y = Math.floor(i/9)*9;` determines the starting index of the respective row. 
 
 ## Using the Game
 
