@@ -93,7 +93,7 @@ input:checked + label::before{
     color:rgb(36, 87, 20);
 
     user-select: none;
-    font-weight:100;
+    font-weight:300;
     position: relative;
 }
 
