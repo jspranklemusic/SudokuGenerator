@@ -290,7 +290,7 @@ label{
 @media only screen and (max-width:710px){
 
     #scene{
-        border-radius:0;
+        border-radius:0px;
     }
     html,body{
         grid-template-columns: 100%
