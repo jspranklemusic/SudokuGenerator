@@ -1,7 +1,7 @@
 html,body{
     width:100vw;
     height:100%;
-    background:linear-gradient(rgb(28, 59, 26),rgb(7, 37, 11));
+    background:radial-gradient(rgb(43, 87, 40),rgb(19, 54, 22));
     padding:0;
     margin:0;
     font-family:sans-serif;
@@ -10,6 +10,7 @@ html,body{
     align-items:center;
     grid-template-columns: 5fr 1fr;
     position:relative;
+    color:rgb(30,30,30);
     -webkit-tap-highlight-color: transparent;
 }
 
@@ -26,13 +27,63 @@ a{
     grid-template-rows: repeat(9, 1fr);
     grid-template-columns: repeat(9, 1fr);
     box-sizing: border-box;
-    border:7px solid rgb(26, 131, 16);
     max-width:680px;
     max-height:680px;
     margin:0 auto;
-    border-radius:5px;
+    border-radius:7px;
+    overflow:hidden;
     cursor: pointer;
+
 }
+
+input{
+    visibility:hidden;
+}
+
+label{
+    position:relative;
+    margin:0.25rem 0;
+}
+
+input + label::before{
+    position:absolute;
+    content:"";
+    left:-1.75rem;
+    top:-1px;
+    height:1rem;
+    width:1rem;
+    background-image:linear-gradient(rgb(54, 124, 54), rgb(54, 124, 54));
+    background-repeat:no-repeat;
+    background-size:0% 0%;
+    background-position:center;
+    border:2px solid white;
+    box-sizing: border-box;
+    transition:0.3s;
+    border-radius:50%;
+    box-shadow:0 0 0 2px rgb(53, 121, 53);
+}
+
+input + label::after{
+    content:"";
+    height:2px;
+    width:0%;
+    position: absolute;
+    background:rgb(49, 119, 49);
+    bottom:-4px;
+    left:0;
+    border-radius:100px;
+    transition:0.3s;
+}
+
+input:checked + label::after{
+    width:100%;
+}
+
+input:checked + label::before{
+    background-size:100% 100%;
+}
+
+
 
 #scene >*{
     display:flex;
@@ -42,7 +93,7 @@ a{
     color:rgb(36, 87, 20);
 
     user-select: none;
-    font-weight:bold;
+    font-weight:100;
     position: relative;
 }
 
@@ -118,18 +169,23 @@ a{
 h1{
     text-align:center;
     font-size:1.25rem;
-    padding:0;
+    padding-top:0.5rem;
     margin:0;
+    font-weight:900;
+    color:rgb(50, 109, 50);
 }
 label{
     font-size:16px;
 }
 
 .radio-buttons{
-    padding:1rem;
     width:max-content;
     box-sizing: border-box;
+    padding:0.75rem;
+    padding-bottom:0.3rem;
 }
+
+
 
 button{
     display:block;
@@ -141,6 +197,7 @@ button{
     border:2px solid rgb(199, 199, 199);
     font-size:0.8rem;
     cursor: pointer;
+    flex-basis:50%;
 
 }
 
